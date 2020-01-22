@@ -5,11 +5,15 @@ require('make-promises-safe');
 // Then create an onserver per WS connection - on clients "subscribe" request
 const Rx = require('rxjs');
 const subject = new Rx.BehaviorSubject(0);
-let observer = subject.subscribe({
+let observerA = subject.subscribe({
 	next: (v) => console.log('observerA: ' + v)
 });
 subject.next(1);
-observer.unsubscribe();
+let observerB = subject.subscribe({
+	next: (v) => console.log('observerB: ' + v)
+});
+observerA.unsubscribe();
+observerB.unsubscribe();
 
 // Require the framework and instantiate it
 const fastify = require('fastify')({logger: true});
