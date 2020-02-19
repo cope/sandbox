@@ -3,9 +3,6 @@
 const _ = require('lodash');
 const rxjs = require('rxjs');
 
-console.log('rxjs', rxjs);
-console.log('range', _.range(6));
-
 const demoRedux = require('./demo-redux');
 const demoObservable = require('./demo-observable');
 const demoSubject = require('./demo-subject');

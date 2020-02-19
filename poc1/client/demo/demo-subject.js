@@ -5,9 +5,7 @@ const rxjs = require('rxjs');
 module.exports = function () {
 	console.log('\n...demo-subject');
 
-	const dataSubject = new rxjs.BehaviorSubject();
-	console.log('- sending', 'Hello Behavior');
-	dataSubject.next('Hello Behavior');
+	const dataSubject = new rxjs.BehaviorSubject('Hello Behavior');
 
 	console.log('- A subscribed...');
 	const dataWatchA = dataSubject.subscribe(val => console.log('A:', val));

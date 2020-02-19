@@ -1,5 +1,5 @@
 'use strict';
-// require('./demo/demo')();
+require('./demo/demo')();
 
 const _ = require('lodash');
 
